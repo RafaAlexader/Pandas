@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-empresa_df = pd.DataFrame(columns=['Rut', 'Nombre', 'Giro', 'Representante Legal', 'Fecha de constitucion','antiguedad'])
+empresa_df = pd.DataFrame(columns=['Rut', 'Nombre', 'Giro', 'Representante Legal', 'Fecha de constitucion'])
 persona_df = pd.DataFrame(columns=['Rut', 'Nombre', 'Segundo Nombre', 'Apellido Paterno', 'Apellido Materno', 'Fecha de Nacimiento'])
 
 def opcion():
