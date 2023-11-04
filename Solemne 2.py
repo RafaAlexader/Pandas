@@ -168,8 +168,8 @@ def guardar_en_excel():
         persona_df.to_excel(writer, sheet_name='Personas Naturales', index=False)
 boton_guardar_excel = ttk.Button(ventana, text="Guardar en Excel", command=guardar_en_excel)
 boton_guardar_excel.pack()
-ventana.mainloop()
 
+ventana.mainloop()
 
 persona_df['Edad'] = persona_df['Fecha de Nacimiento'].apply(calcular_edad)
 persona_df['Categoría Edad'] = pd.cut(persona_df['Edad'], bins=[0, 20, 35, 60, 150], labels=['Joven', 'Adulto', 'Senior', 'Tercera Edad'])
@@ -181,5 +181,13 @@ edad_counts.plot(kind='bar', color='skyblue')
 plt.title('Distribución de Edades')
 plt.xlabel('Categoría de Edad')
 plt.ylabel('Cantidad de Personas')
+plt.show()
 
+tipo_empresa_counts = empresa_df['Giro'].value_counts()
+plt.figure(figsize=(10, 6))
+tipo_empresa_counts.plot(kind='bar', color='skyblue')
+plt.title('Distribución de Tipos de Empresa')
+plt.xlabel('Tipo de Empresa')
+plt.ylabel('Cantidad de Empresas')
+plt.xticks(rotation=45) 
 plt.show()
